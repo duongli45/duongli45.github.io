@@ -51,7 +51,6 @@
       font-size: 2rem;
       font-weight: 600;
       line-height: 1.2;
-      color: var(--ink);
       margin-bottom: 6px;
     }
 
@@ -74,20 +73,10 @@
       animation: fadeUp 0.6s ease both;
     }
 
-    /* Staggered animation for sections */
-    .section:nth-child(4) { animation-delay: 0.1s; }
-    .section:nth-child(5) { animation-delay: 0.15s; }
-    .section:nth-child(6) { animation-delay: 0.2s; }
-    .section:nth-child(7) { animation-delay: 0.25s; }
-    .section:nth-child(8) { animation-delay: 0.3s; }
-    .section:nth-child(9) { animation-delay: 0.35s; }
-    .section:nth-child(10) { animation-delay: 0.4s; }
-
     h2 {
       font-family: 'Lora', serif;
       font-size: 1.1rem;
       font-weight: 600;
-      color: var(--ink);
       margin-bottom: 12px;
     }
 
@@ -114,11 +103,7 @@
       color: var(--accent);
       text-decoration: none;
       border-bottom: 1px solid currentColor;
-      padding-bottom: 1px;
-      transition: opacity 0.2s;
     }
-
-    a:hover { opacity: 0.7; }
 
     @media (max-width: 520px) {
       .card { padding: 40px 28px; }
@@ -136,59 +121,91 @@
 
     <div class="section">
       <h2>1. Overview</h2>
-      <p>Scroll Escaper is a screen time management app that helps you limit social media usage through playful challenges. This Privacy Policy explains what data we collect and how it is used.</p>
+      <p>Scroll Escaper is a screen time management app that helps you build healthier phone habits by balancing screen time with physical activity. This Privacy Policy explains what data we collect, how it is stored, and how it is used.</p>
     </div>
 
     <div class="section">
       <h2>2. Data Stored on Your Device</h2>
-      <p>All core app data — including blocked app lists, challenge history, usage statistics, and settings — is stored locally on your device using an on-device database. This data is never transmitted to external servers.</p>
+      <p>Core app data — including monitored app selections, usage settings, daily usage records, and streak history — is stored locally on your device using an on-device database and shared App Group storage. This data is not transmitted to external servers.</p>
     </div>
 
     <div class="section">
-      <h2>3. Analytics Data We Collect</h2>
-      <p>We use Firebase Analytics (provided by Google) to understand how the app is used and improve the experience. Firebase Analytics collects the following data anonymously:</p>
-      
-      <p><strong>Usage Data (Product Interaction):</strong></p>
-      <p class="list-item">Screen views and navigation patterns</p>
-      <p class="list-item">Feature usage events (e.g., monitoring started/stopped, challenges started/completed, settings changed)</p>
-      <p class="list-item">No personally identifiable information is included in these events</p>
-      
-      <p><strong>Device Identifiers:</strong></p>
-      <p class="list-item">Firebase automatically generates an anonymous app instance ID to distinguish sessions. This is not linked to your identity and is not shared with third parties for tracking purposes.</p>
-      
-      <p><strong>Diagnostics:</strong></p>
-      <p class="list-item">Basic app performance data such as app version, OS version, and session duration.</p>
-      
-      <p>This data is NOT linked to your identity, NOT used for advertising, and NOT shared with third parties beyond Google's Firebase service.</p>
+      <h2>3. Data Stored in the Cloud</h2>
+      <p>To enable Squad features and sync your progress, certain data is stored on our servers using Google Firebase (Firestore):</p>
+
+      <p><strong>Account Data:</strong></p>
+      <p class="list-item">Anonymous user ID (no email/password required)</p>
+      <p class="list-item">Display name and avatar emoji</p>
+      <p class="list-item">Monitoring status and last active timestamp</p>
+
+      <p><strong>Squad Data:</strong></p>
+      <p class="list-item">Squad name, invite code, and members</p>
+      <p class="list-item">Squad streak status and history</p>
+
+      <p><strong>Daily Reports:</strong></p>
+      <p class="list-item">Steps walked, minutes earned, minutes used</p>
+      <p class="list-item">Block count and limit adherence</p>
+
+      <p>No personal contact information, location data, or browsing history is included.</p>
     </div>
 
     <div class="section">
-      <h2>4. HealthKit Data</h2>
-      <p>Scroll Escaper accesses Apple HealthKit to read step count data for the Walking Challenge feature. This data is:</p>
-      <p class="list-item">Processed locally on your device</p>
-      <p class="list-item">Step counts may be included in anonymous analytics events to measure challenge completion</p>
-      <p class="list-item">Never sold or shared with third parties for advertising or marketing purposes</p>
-      <p class="list-item">Used solely for app functionality and analytics</p>
+      <h2>4. Analytics</h2>
+      <p>We use Firebase Analytics to understand usage and improve the app:</p>
+      <p class="list-item">Screen views and navigation</p>
+      <p class="list-item">Feature usage events</p>
+      <p class="list-item">App version, OS version, session duration</p>
+      <p class="list-item">Anonymous app instance ID</p>
+      <p>This data is not linked to your identity or used for advertising.</p>
     </div>
 
     <div class="section">
-      <h2>5. What We Do NOT Collect</h2>
-      <p class="list-item">Personal information (name, email, phone number)</p>
+      <h2>5. HealthKit Data</h2>
+      <p>Scroll Escaper reads step count data from Apple HealthKit:</p>
+      <p class="list-item">Processed locally</p>
+      <p class="list-item">Included in daily reports for squad sharing</p>
+      <p class="list-item">Never sold or used for advertising</p>
+      <p class="list-item">Used only for app functionality</p>
+    </div>
+
+    <div class="section">
+      <h2>6. Push Notifications</h2>
+      <p>We use Firebase Cloud Messaging to send notifications. A device token is linked to your anonymous user ID. No personal information is associated.</p>
+    </div>
+
+    <div class="section">
+      <h2>7. Purchases & Subscriptions</h2>
+      <p>Subscriptions are managed by RevenueCat. Payment processing is handled by Apple. We do not store payment information.</p>
+    </div>
+
+    <div class="section">
+      <h2>8. What We Do NOT Collect</h2>
+      <p class="list-item">Personal information</p>
       <p class="list-item">Location data</p>
-      <p class="list-item">Photos or media (camera is used only for real-time Object Hunter challenge — no images are stored or transmitted)</p>
-      <p class="list-item">Contacts or address book data</p>
-      <p class="list-item">Financial or payment information</p>
-      <p class="list-item">Advertising identifiers (IDFA)</p>
+      <p class="list-item">Photos or media</p>
+      <p class="list-item">Contacts</p>
+      <p class="list-item">Financial data</p>
+      <p class="list-item">Advertising identifiers</p>
     </div>
 
     <div class="section">
-      <h2>7. Changes to This Policy</h2>
-      <p>We may update this Privacy Policy from time to time. Material changes will be communicated through the app. Continued use of the app after changes constitutes acceptance.</p>
+      <h2>9. Data Retention & Deletion</h2>
+      <p>You can delete your account anytime from Settings. Uninstalling removes local data. Analytics data follows Firebase retention policies.</p>
     </div>
 
     <div class="section">
-      <h2>8. Contact</h2>
-      <p>If you have questions about this Privacy Policy, contact us at: <a href="mailto:li.nguyenduong@gmail.com">li.nguyenduong@gmail.com</a></p>
+      <h2>10. Children's Privacy</h2>
+      <p>The app does not knowingly collect personal information from children under 13.</p>
+    </div>
+
+    <div class="section">
+      <h2>11. Changes to This Policy</h2>
+      <p>We may update this policy. Continued use of the app means you accept the changes.</p>
+    </div>
+
+    <div class="section">
+      <h2>12. Contact</h2>
+      <p>Email: <a href="mailto:li.nguyenduong@gmail.com">li.nguyenduong@gmail.com</a></p>
     </div>
   </div>
 </body>
